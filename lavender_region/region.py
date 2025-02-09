@@ -3,7 +3,7 @@ from io import StringIO
 
 csv_str = """Name,Flag,Country Code,Capital,State,Telephone Area Code,Internet Domain
 Russia,🇷🇺,RU,Moscow,Europe,7,ru
-Antarctica,🇦🇶,AQ,,Antarctica,,aq 
+Antarctica,🇦🇶,AQ,,Antarctica,,aq
 Canada,🇨🇦,CA,Ottawa,North America,1,ca
 China,🇨🇳,CN,Beijing,Asia,86,cn
 United States,🇺🇸,US,Washington,North America,1,us
@@ -185,7 +185,7 @@ Trinidad and Tobago,🇹🇹,TT,Port of Spain,North America,1,tt
 French Polynesia (France),🇵🇫,PF,Papeete,Oceania,689,pf
 Transnistria,🇹🇩,MD,Tiraspol,Europe,373,md
 Cape Verde,🇨🇻,CV,Praia,Africa,238,cv
-South Georgia and the South Sandwich Islands (UK),🇬🇸,GS,King Edward Point,South America,500,gs 
+South Georgia and the South Sandwich Islands (UK),🇬🇸,GS,King Edward Point,South America,500,gs
 South Ossetia,🇬🇪,GE,Tskhinvali,Asia,995,ge
 Northern Cyprus,🇨🇾,CY,Nicosia,Europe,357,cy
 Samoa,🇼🇸,WS,Apia,Oceania,685,ws
