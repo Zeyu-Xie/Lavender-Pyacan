@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Lavender-Region",
-    version="1.0.6",
+    version="1.0.7",
     author="Zeyu Xie",
     author_email="xie.zeyu20@gmail.com",
     description="A pip package for region data",
