@@ -303,11 +303,6 @@ class Region:
             if len(index_list) == 0:
                 raise ValueError(f"No region found with capital '{capital}'")
             self.index = index_list[0]
-        elif state is not None:
-            index_list = df[df["State"] == state].index
-            if len(index_list) == 0:
-                raise ValueError(f"No region found with state '{state}'")
-            self.index = index_list[0]
         elif telephone_area_code is not None:
             index_list = df[df["Telephone Area Code"] == telephone_area_code].index
             if len(index_list) == 0:
