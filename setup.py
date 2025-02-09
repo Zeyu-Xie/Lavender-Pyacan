@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Lavender-Region",
-    version="1.0.7",
+    version="1.0.9",
     author="Zeyu Xie",
     author_email="xie.zeyu20@gmail.com",
     description="A pip package for region data",
@@ -15,5 +15,5 @@ setup(
         "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
+    python_requires=">=3.6",
 )

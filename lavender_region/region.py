@@ -1,7 +1,7 @@
 import pandas as pd
 from io import StringIO
 
-csv_str = """Name,Flag,Country Code,Capital,State,Telephone Area Code,Internet Domain
+csv_str = """Name,Flag,Entry,Capital,State,ISD,TLD
 Abkhazia,🇦🇹,GE,Sukhumi,Asia,995,ge
 Afghanistan,🇦🇫,AF,Kabul,Asia,93,af
 Akrotiri and Dhekelia (UK),,,Episkopi Cantonment,Europe,357,ax
@@ -267,6 +267,7 @@ Zimbabwe,🇿🇼,ZW,Harare,Africa,263,zw"""
 
 df = pd.read_csv(StringIO(csv_str), dtype=str, keep_default_na=False)
 
+
 class Region:
     def __init__(self, name):
         index_list = df[df["Name"] == name].index
@@ -275,48 +276,42 @@ class Region:
         self.index = index_list[0]
         self.name = name
         self.flag = df.iloc[self.index]["Flag"]
-        self.country_code = df.iloc[self.index]["Country Code"]
+        self.entry = df.iloc[self.index]["Entry"]
         self.capital = df.iloc[self.index]["Capital"]
         self.state = df.iloc[self.index]["State"]
-        self.telephone_area_code = df.iloc[self.index]["Telephone Area Code"]
-        self.internet_domain = df.iloc[self.index]["Internet Domain"]
+        self.isd = df.iloc[self.index]["ISD"]
+        self.tld = df.iloc[self.index]["TLD"]
 
     def __str__(self):
         str = f"""Name: {self.name}
 Flag: {self.flag}
-Country Code: {self.country_code}
+Entry: {self.entry}
 Capital: {self.capital}
 State: {self.state}
-Telephone Area Code: {self.telephone_area_code}
-Internet Domain: {self.internet_domain}"""
+ISD: {self.isd}
+TLD: {self.tld}"""
         return str
 
 
 def get_regions(
     name=None,
     flag=None,
-    country_code=None,
+    entry=None,
     capital=None,
     state=None,
-    telephone_area_code=None,
-    internet_domain=None,
+    isd=None,
+    tld=None,
 ):
     output = []
     for i in range(len(df)):
         if (
             (name is None or df.iloc[i]["Name"] == name)
             and (flag is None or df.iloc[i]["Flag"] == flag)
-            and (country_code is None or df.iloc[i]["Country Code"] == country_code)
+            and (entry is None or df.iloc[i]["Entry"] == entry)
             and (capital is None or df.iloc[i]["Capital"] == capital)
             and (state is None or df.iloc[i]["State"] == state)
-            and (
-                telephone_area_code is None
-                or df.iloc[i]["Telephone Area Code"] == telephone_area_code
-            )
-            and (
-                internet_domain is None
-                or df.iloc[i]["Internet Domain"] == internet_domain
-            )
+            and (isd is None or df.iloc[i]["ISD"] == isd)
+            and (tld is None or df.iloc[i]["TLD"] == tld)
         ):
             output.append(Region(df.iloc[i]["Name"]))
     return output
